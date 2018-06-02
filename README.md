@@ -32,7 +32,7 @@ Once the extension is installed, simply use it in your code by  :
 Вам нужно сделать миграцию:
 
 ```php
-yii migrate --migrationPath=@vendor/jakharbek/yii2-logs/src/migrations
+yii migrate --migrationPath=@vendor/ready24/yii2-logs/src/migrations
 ```
 
 Если вы хотите применить к определёному таблицы вам нужно создать связь между ними
@@ -40,7 +40,7 @@ yii migrate --migrationPath=@vendor/jakharbek/yii2-logs/src/migrations
 
 После вам нужно добавить в ваш класс новое поведение:
 ```php
-jakharbek\logs\behaviors\LogBehavior
+ready24\logs\behaviors\LogBehavior
 ```
 
 и тогда вы сможете добавить новый лог имено к этой модели
@@ -63,7 +63,7 @@ Logs::create($message,$model = null);
 Пример 1:
 
 ```php
- <?=\jakharbek\logs\widgets\LogWidget::widget([
+ <?=\ready24\logs\widgets\LogWidget::widget([
            'model' => $model,
             'view' => '@your/path/to/view',
             'provider' => [
@@ -79,7 +79,7 @@ view
 ```php
 
 /**
- * @var \jakharbek\logs\models\Logs $log
+ * @var \ready24\logs\models\Logs $log
  * @var \yii\db\ActiveRecord $model
  * @var \yii\data\BaseDataProvider $provider
  */
@@ -96,7 +96,7 @@ echo ListView::widget([
 Пример 2:
 
 ```php
- <?=\jakharbek\logs\widgets\LogListWidget::widget([
+ <?=\ready24\logs\widgets\LogListWidget::widget([
            'model' => $model,
             'provider' => [
                     'pagination' => [
